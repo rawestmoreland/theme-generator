@@ -62,6 +62,10 @@ export default function RootLayout({
             'pastel-kawaii-dark',
             'space-odyssey',
             'space-odyssey-dark',
+            'vintage-vinyl',
+            'vintage-vinyl-dark',
+            'misty-harbor',
+            'misty-harbor-dark',
           ]}
         >
           {children}
