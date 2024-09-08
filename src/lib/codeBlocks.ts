@@ -1,67 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-  :root,
-  [data-theme='light'] {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  [data-theme='dark'] {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  /* Zinc Light */
-  [data-theme='zinc'] {
+export const codeBlocks = {
+  zinc: `@layer base {
+  :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -88,9 +27,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-
-  /* Zinc Dark */
-  [data-theme='zinc-dark'] {
+ 
+  .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
@@ -116,180 +54,9 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-
-  /* Slate light */
-  [data-theme='slate'] {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  /* Slate Dark */
-  [data-theme='slate-dark'] {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-
-  /* Stone Light */
-  [data-theme='stone'] {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  /* Stone Dark */
-  [data-theme='stone-dark'] {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-
-  /* Gray Light */
-  [data-theme='gray'] {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  /* Gray Dark */
-  [data-theme='gray-dark'] {
-    --background: 224 71.4% 4.1%;
-    --foreground: 210 20% 98%;
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-
-  /* Blue Light */
-  [data-theme='blue'] {
+}`,
+  blue: `@layer base {
+  :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -316,9 +83,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-
-  /* Blue Dark */
-  [data-theme='blue-dark'] {
+ 
+  .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -344,9 +110,177 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-
-  /* Orange Light */
-  [data-theme='orange'] {
+}`,
+  slate: `@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}`,
+  stone: `@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}`,
+  gray: `@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+ 
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}`,
+  orange: `@layer base {
+  :root {
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
     --card: 0 0% 100%;
@@ -373,9 +307,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-
-  /* Orange Dark */
-  [data-theme='orange-dark'] {
+ 
+  .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
     --card: 20 14.3% 4.1%;
@@ -401,9 +334,9 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-
-  /* Bubblegum Pop Light */
-  [data-theme='bubblegum-pop'] {
+}`,
+  'bubblegum-pop': `@layer base {
+  :root {
     --background: 330 100% 99%;
     --foreground: 330 10% 10%;
     --card: 330 100% 98%;
@@ -430,9 +363,8 @@
     --chart-4: 180 90% 60%;
     --chart-5: 60 90% 60%;
   }
-
-  /* Bubblegum Pop Dark */
-  [data-theme='bubblegum-pop-dark'] {
+ 
+  .dark {
     --background: 330 50% 10%;
     --foreground: 330 10% 95%;
     --card: 330 50% 12%;
@@ -452,16 +384,15 @@
     --border: 330 60% 20%;
     --input: 330 60% 20%;
     --ring: 330 90% 60%;
-    --radius: 1rem;
     --chart-1: 330 90% 60%;
     --chart-2: 275 90% 60%;
     --chart-3: 30 90% 60%;
     --chart-4: 180 90% 60%;
     --chart-5: 60 90% 60%;
   }
-
-  /* Cyberpunk Neon Light */
-  [data-theme='cyberpunk-neon'] {
+}`,
+  'cyberpunk-neon': `@layer base {
+  :root {
     --background: 220 20% 97%;
     --foreground: 220 80% 5%;
     --card: 220 20% 98%;
@@ -488,9 +419,8 @@
     --chart-4: 260 100% 50%;
     --chart-5: 30 100% 50%;
   }
-
-  /* Cyberpunk Neon Dark */
-  [data-theme='cyberpunk-neon-dark'] {
+ 
+  .dark {
     --background: 220 80% 5%;
     --foreground: 220 20% 98%;
     --card: 220 80% 7%;
@@ -509,7 +439,6 @@
     --destructive-foreground: 0 100% 10%;
     --border: 220 80% 30%;
     --input: 220 80% 30%;
-    --radius: 0.125rem;
     --ring: 320 100% 60%;
     --chart-1: 320 100% 60%;
     --chart-2: 180 100% 60%;
@@ -517,9 +446,9 @@
     --chart-4: 260 100% 60%;
     --chart-5: 30 100% 60%;
   }
-
-  /* Retro Arcade Light */
-  [data-theme='retro-arcade'] {
+}`,
+  'retro-arcade': `@layer base {
+  :root {
     --background: 60 10% 95%;
     --foreground: 60 10% 5%;
     --card: 60 10% 97%;
@@ -546,9 +475,8 @@
     --chart-4: 280 90% 50%;
     --chart-5: 180 90% 40%;
   }
-
-  /* Retro Arcade Dark */
-  [data-theme='retro-arcade-dark'] {
+ 
+  .dark {
     --background: 240 10% 5%;
     --foreground: 60 10% 95%;
     --card: 240 10% 7%;
@@ -567,7 +495,6 @@
     --destructive-foreground: 0 90% 10%;
     --border: 240 10% 30%;
     --input: 240 10% 30%;
-    --radius: 0;
     --ring: 220 90% 60%;
     --chart-1: 220 90% 60%;
     --chart-2: 120 90% 50%;
@@ -575,9 +502,9 @@
     --chart-4: 280 90% 60%;
     --chart-5: 180 90% 50%;
   }
-
-  /* 1. Tropical Paradise Light */
-  [data-theme='tropical-paradise'] {
+}`,
+  'tropical-paradise': `@layer base {
+  :root {
     --background: 180 50% 97%;
     --foreground: 180 50% 10%;
     --card: 180 50% 98%;
@@ -604,9 +531,8 @@
     --chart-4: 200 90% 50%;
     --chart-5: 50 90% 50%;
   }
-
-  /* Tropical Paradise Dark */
-  [data-theme='tropical-paradise-dark'] {
+ 
+  .dark {
     --background: 200 70% 10%;
     --foreground: 180 50% 97%;
     --card: 200 70% 12%;
@@ -633,9 +559,9 @@
     --chart-4: 200 90% 60%;
     --chart-5: 50 90% 60%;
   }
-
-  /* 2. Steampunk Cogs Light */
-  [data-theme='steampunk-cogs'] {
+}`,
+  'steampunk-cogs': `@layer base {
+  :root {
     --background: 30 20% 95%;
     --foreground: 30 20% 10%;
     --card: 30 20% 97%;
@@ -662,9 +588,8 @@
     --chart-4: 35 80% 40%;
     --chart-5: 55 70% 50%;
   }
-
-  /* Steampunk Cogs Dark */
-  [data-theme='steampunk-cogs-dark'] {
+ 
+  .dark {
     --background: 30 30% 10%;
     --foreground: 30 20% 95%;
     --card: 30 30% 12%;
@@ -691,9 +616,9 @@
     --chart-4: 35 80% 50%;
     --chart-5: 55 70% 60%;
   }
-
-  /* 3. Neon Synthwave Light */
-  [data-theme='neon-synthwave'] {
+}`,
+  'neon-synthwave': `@layer base {
+  :root {
     --background: 280 30% 95%;
     --foreground: 280 30% 10%;
     --card: 280 30% 97%;
@@ -720,9 +645,8 @@
     --chart-4: 260 100% 60%;
     --chart-5: 300 100% 60%;
   }
-
-  /* Neon Synthwave Dark */
-  [data-theme='neon-synthwave-dark'] {
+ 
+  .dark {
     --background: 280 50% 5%;
     --foreground: 280 30% 95%;
     --card: 280 50% 7%;
@@ -749,9 +673,9 @@
     --chart-4: 260 100% 70%;
     --chart-5: 300 100% 70%;
   }
-
-  /* 4. Pastel Kawaii Light */
-  [data-theme='pastel-kawaii'] {
+}`,
+  'pastel-kawaii': `@layer base {
+  :root {
     --background: 60 30% 97%;
     --foreground: 60 30% 10%;
     --card: 60 30% 98%;
@@ -778,9 +702,8 @@
     --chart-4: 120 60% 80%;
     --chart-5: 30 80% 80%;
   }
-
-  /* Pastel Kawaii Dark */
-  [data-theme='pastel-kawaii-dark'] {
+ 
+  .dark {
     --background: 270 30% 10%;
     --foreground: 60 30% 97%;
     --card: 270 30% 12%;
@@ -807,9 +730,9 @@
     --chart-4: 120 60% 70%;
     --chart-5: 30 80% 70%;
   }
-
-  /* 5. Space Odyssey Light */
-  [data-theme='space-odyssey'] {
+}`,
+  'space-odyssey': `@layer base {
+  :root {
     --background: 220 20% 97%;
     --foreground: 220 20% 10%;
     --card: 220 20% 98%;
@@ -836,9 +759,8 @@
     --chart-4: 60 80% 50%;
     --chart-5: 120 70% 50%;
   }
-
-  /* Space Odyssey Dark */
-  [data-theme='space-odyssey-dark'] {
+ 
+  .dark {
     --background: 230 50% 3%;
     --foreground: 220 20% 97%;
     --card: 230 50% 5%;
@@ -865,17 +787,5 @@
     --chart-4: 60 80% 60%;
     --chart-5: 120 70% 40%;
   }
-}
-
-* {
-  @apply border-border;
-}
-body {
-  @apply bg-background text-foreground;
-  font-family: Arial, Helvetica, sans-serif;
-}
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+}`,
+};
