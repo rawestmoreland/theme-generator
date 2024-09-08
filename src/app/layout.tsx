@@ -66,6 +66,8 @@ export default function RootLayout({
             'vintage-vinyl-dark',
             'misty-harbor',
             'misty-harbor-dark',
+            'zen-garden',
+            'zen-garden-dark',
           ]}
         >
           {children}

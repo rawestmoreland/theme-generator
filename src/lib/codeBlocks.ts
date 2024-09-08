@@ -902,4 +902,61 @@ export const codeBlocks = {
     --chart-5: 30 15% 50%;
   }
 }`,
+  'zen-garden': `@layer base {
+  :root {
+    --background: 90 10% 98%;
+    --foreground: 90 10% 10%;
+    --card: 90 10% 99%;
+    --card-foreground: 90 10% 10%;
+    --popover: 90 10% 99%;
+    --popover-foreground: 90 10% 10%;
+    --primary: 120 15% 45%;
+    --primary-foreground: 120 15% 98%;
+    --secondary: 60 10% 80%;
+    --secondary-foreground: 60 10% 10%;
+    --muted: 90 10% 90%;
+    --muted-foreground: 90 10% 40%;
+    --accent: 180 15% 45%;
+    --accent-foreground: 180 15% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 60% 98%;
+    --border: 90 10% 85%;
+    --input: 90 10% 85%;
+    --ring: 120 15% 45%;
+    --radius: 0.5rem;
+    --chart-1: 120 15% 45%;
+    --chart-2: 60 10% 80%;
+    --chart-3: 180 15% 45%;
+    --chart-4: 30 15% 50%;
+    --chart-5: 240 10% 60%;
+  }
+ 
+  .dark {
+    --background: 90 15% 10%;
+    --foreground: 90 10% 98%;
+    --card: 90 15% 12%;
+    --card-foreground: 90 10% 98%;
+    --popover: 90 15% 12%;
+    --popover-foreground: 90 10% 98%;
+    --primary: 120 15% 55%;
+    --primary-foreground: 120 15% 10%;
+    --secondary: 60 10% 30%;
+    --secondary-foreground: 60 10% 98%;
+    --muted: 90 15% 20%;
+    --muted-foreground: 90 10% 70%;
+    --accent: 180 15% 55%;
+    --accent-foreground: 180 15% 10%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 0 60% 98%;
+    --border: 90 15% 25%;
+    --input: 90 15% 25%;
+    --ring: 120 15% 55%;
+    --radius: 0.5rem;
+    --chart-1: 120 15% 55%;
+    --chart-2: 60 10% 30%;
+    --chart-3: 180 15% 55%;
+    --chart-4: 30 15% 60%;
+    --chart-5: 240 10% 40%;
+  }
+}`,
 };
