@@ -1,25 +1,14 @@
-import NextThemeSwatches from '@/components/next-theme-swatches';
+import { AllSwatches } from '@/components/all-swatches';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
-export default function Home() {
+export default async function Page() {
   return (
     <ThemeProvider
       attribute='data-theme'
-      defaultTheme='zinc'
-      enableSystem={false}
       themes={[
-        'zinc',
-        'zinc-dark',
-        'slate',
-        'slate-dark',
-        'stone',
-        'stone-dark',
-        'gray',
-        'gray-dark',
-        'blue',
-        'blue-dark',
-        'orange',
-        'orange-dark',
         'bubblegum-pop',
         'bubblegum-pop-dark',
         'cyberpunk-neon',
@@ -42,12 +31,28 @@ export default function Home() {
         'misty-harbor-dark',
         'zen-garden',
         'zen-garden-dark',
+        'zinc',
+        'zinc-dark',
+        'slate',
+        'slate-dark',
+        'stone',
+        'stone-dark',
+        'gray',
+        'gray-dark',
+        'blue',
+        'blue-dark',
+        'orange',
+        'orange-dark',
       ]}
     >
-      <div className='space-y-8 m-8'>
-        <div className=''>
-          <NextThemeSwatches />
-        </div>
+      <div className='min-h-screen space-y-8 m-8'>
+        <Button variant='link' asChild>
+          <div>
+            <ArrowLeft className='h-4 w-4 mr-2' />
+            <Link href='/'>Back</Link>
+          </div>
+        </Button>
+        <AllSwatches />
       </div>
     </ThemeProvider>
   );

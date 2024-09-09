@@ -32,8 +32,15 @@ import {
 import { codeBlocks } from '@/lib/codeBlocks';
 import { ScrollArea } from './ui/scroll-area';
 import { CopyButton } from './copy-button';
+import Link from 'next/link';
 
-const ColorSwatch = ({ color, name }: { color: string; name: string }) => (
+export const ColorSwatch = ({
+  color,
+  name,
+}: {
+  color: string;
+  name: string;
+}) => (
   <div className='flex flex-col items-center mr-4 mb-4'>
     <div
       className='w-16 h-16 rounded-full mb-2'
@@ -43,7 +50,11 @@ const ColorSwatch = ({ color, name }: { color: string; name: string }) => (
   </div>
 );
 
-const ThemeSwatches = ({ colors }: { colors: Record<string, string> }) => (
+export const ThemeSwatches = ({
+  colors,
+}: {
+  colors: Record<string, string>;
+}) => (
   <div className='flex flex-wrap items-center justify-center'>
     {Object.entries(colors).map(([name, color]) => (
       <ColorSwatch key={name} name={name} color={color} />
@@ -127,7 +138,14 @@ const NextThemeSwatches = () => {
   return (
     <Card className='w-full max-w-3xl mx-auto'>
       <CardHeader>
-        <CardTitle>shadcn/ui Theme Color Swatches</CardTitle>
+        <CardTitle>
+          <div className='flex justify-between items-center'>
+            <span>shadcn/ui Theme Color Swatches</span>
+            <Button variant='link' asChild>
+              <Link href='/swatches'>View All</Link>
+            </Button>
+          </div>
+        </CardTitle>
         <CardDescription>
           <div className='flex flex-col gap-2'>
             The boring ones...and the fun ones.
