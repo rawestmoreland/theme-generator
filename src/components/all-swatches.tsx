@@ -3,6 +3,7 @@
 import { useTheme, ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Adsense } from '@ctrl/react-adsense';
 
 export function AllSwatches() {
   const { themes } = useTheme();
@@ -86,34 +87,43 @@ export function AllSwatches() {
   };
 
   return (
-    <div className='p-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
-      {Object.entries(themeColors)
-        .filter(
-          (themeColor) =>
-            !themeColor[0].includes('dark') && themeColor[0] !== 'system'
-        )
-        .map(([themeName]) => (
-          <>
-            <Card key={themeName}>
-              <CardHeader>
-                <CardTitle>{themeName}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className='flex flex-col gap-2'>
-                  {Object.entries(themeColors)
-                    .filter((themeColor) => themeColor[0].includes(themeName))
-                    .map(([themeName, colors]) => (
-                      <ThemeCard
-                        key={themeName}
-                        themeName={themeName}
-                        colors={colors}
-                      />
-                    ))}
-                </div>
-              </CardContent>
-            </Card>
-          </>
-        ))}
-    </div>
+    <>
+      <Adsense
+        client='ca-pub-3399938065938082'
+        slot='7892467966'
+        style={{ display: 'flex', width: '100%', justifyContent: 'center' }}
+        layout='in-article'
+        format='fluid'
+      />
+      <div className='p-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
+        {Object.entries(themeColors)
+          .filter(
+            (themeColor) =>
+              !themeColor[0].includes('dark') && themeColor[0] !== 'system'
+          )
+          .map(([themeName]) => (
+            <>
+              <Card key={themeName}>
+                <CardHeader>
+                  <CardTitle>{themeName}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className='flex flex-col gap-2'>
+                    {Object.entries(themeColors)
+                      .filter((themeColor) => themeColor[0].includes(themeName))
+                      .map(([themeName, colors]) => (
+                        <ThemeCard
+                          key={themeName}
+                          themeName={themeName}
+                          colors={colors}
+                        />
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </>
+          ))}
+      </div>
+    </>
   );
 }

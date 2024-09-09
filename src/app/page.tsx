@@ -1,4 +1,3 @@
-import AdSense from '@/components/AdSense';
 import CardsDemo from '@/components/cards';
 
 import NextThemeSwatches from '@/components/next-theme-swatches';
@@ -50,13 +49,7 @@ export default function Home() {
       <div className='space-y-8 m-8'>
         <div className=' flex flex-col gap-2'>
           <NextThemeSwatches />
-          <div className='w-full max-w-7xl mx-auto'>
-            <AdSense
-              data-ad-slot='8682009292'
-              data-ad-format='auto'
-              data-full-width-responsive='true'
-            />
-          </div>
+          <div className='w-full max-w-7xl mx-auto'></div>
           <div className='max-w-7xl mx-auto'>
             <CardsDemo />
           </div>

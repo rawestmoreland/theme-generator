@@ -1,4 +1,3 @@
-import AdSense from '@/components/AdSense';
 import { AllSwatches } from '@/components/all-swatches';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Button } from '@/components/ui/button';
@@ -53,11 +52,6 @@ export default async function Page() {
             <Link href='/'>Back</Link>
           </div>
         </Button>
-        <AdSense
-          data-ad-slot='7892467966'
-          data-ad-format='auto'
-          data-full-width-responsive='true'
-        />
         <AllSwatches />
       </div>
     </ThemeProvider>
