@@ -1,3 +1,4 @@
+import AdSense from '@/components/AdSense';
 import NextThemeSwatches from '@/components/next-theme-swatches';
 import { ThemeProvider } from '@/components/theme-provider';
 
@@ -45,8 +46,15 @@ export default function Home() {
       ]}
     >
       <div className='space-y-8 m-8'>
-        <div className=''>
+        <div className=' flex flex-col gap-2'>
           <NextThemeSwatches />
+          <div className='w-full max-w-3xl mx-auto'>
+            <AdSense
+              data-ad-slot='8682009292'
+              data-ad-format='auto'
+              data-full-width-responsive='true'
+            />
+          </div>
         </div>
       </div>
     </ThemeProvider>

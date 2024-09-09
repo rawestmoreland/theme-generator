@@ -136,100 +136,104 @@ const NextThemeSwatches = () => {
   };
 
   return (
-    <Card className='w-full max-w-3xl mx-auto'>
-      <CardHeader>
-        <CardTitle>
-          <div className='flex justify-between items-center'>
-            <span>shadcn/ui Theme Color Swatches</span>
-            <Button variant='link' asChild>
-              <Link href='/swatches'>View All</Link>
-            </Button>
-          </div>
-        </CardTitle>
-        <CardDescription>
-          <div className='flex flex-col gap-2'>
-            The boring ones...and the fun ones.
-            <div>
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant='outline' size='sm'>
-                    View code
-                  </Button>
-                </SheetTrigger>
-                <SheetContent>
-                  <SheetHeader>
-                    <SheetTitle className='space-x-4'>
-                      <span>Copy CSS</span>{' '}
-                      <CopyButton
-                        code={codeBlocks[baseTheme as keyof typeof codeBlocks]}
-                      />
-                    </SheetTitle>
-                    <SheetDescription>
-                      Copy and paste this into your globals.css
-                    </SheetDescription>
-                  </SheetHeader>
-                  <ScrollArea className='max-h-full h-full mt-2 pb-20'>
-                    <pre className='overflow-x-hidden pb-4'>
-                      <code
-                        id='code-block'
-                        className='language-typescript text-xs'
-                      >
-                        {codeBlocks[baseTheme as keyof typeof codeBlocks]}
-                      </code>
-                    </pre>
-                  </ScrollArea>
-                </SheetContent>
-              </Sheet>
+    <>
+      <Card className='w-full max-w-3xl mx-auto'>
+        <CardHeader>
+          <CardTitle>
+            <div className='flex justify-between items-center'>
+              <span>shadcn/ui Theme Color Swatches</span>
+              <Button variant='link' asChild>
+                <Link href='/swatches'>View All</Link>
+              </Button>
+            </div>
+          </CardTitle>
+          <CardDescription>
+            <div className='flex flex-col gap-2'>
+              The boring ones...and the fun ones.
+              <div>
+                <Sheet>
+                  <SheetTrigger asChild>
+                    <Button variant='outline' size='sm'>
+                      View code
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent>
+                    <SheetHeader>
+                      <SheetTitle className='space-x-4'>
+                        <span>Copy CSS</span>{' '}
+                        <CopyButton
+                          code={
+                            codeBlocks[baseTheme as keyof typeof codeBlocks]
+                          }
+                        />
+                      </SheetTitle>
+                      <SheetDescription>
+                        Copy and paste this into your globals.css
+                      </SheetDescription>
+                    </SheetHeader>
+                    <ScrollArea className='max-h-full h-full mt-2 pb-20'>
+                      <pre className='overflow-x-hidden pb-4'>
+                        <code
+                          id='code-block'
+                          className='language-typescript text-xs'
+                        >
+                          {codeBlocks[baseTheme as keyof typeof codeBlocks]}
+                        </code>
+                      </pre>
+                    </ScrollArea>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            </div>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className='flex justify-between items-center mb-4'>
+            <Select value={baseTheme} onValueChange={handleThemeChange}>
+              <SelectTrigger className='w-[180px]'>
+                <SelectValue placeholder='Select a theme' />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Fun ones</SelectLabel>
+                  {Object.keys(groupedThemes)
+                    .slice(6, Object.keys(groupedThemes).length)
+                    .map((t) => (
+                      <SelectItem key={t} value={t}>
+                        {t.charAt(0).toUpperCase() + t.slice(1)}
+                      </SelectItem>
+                    ))}
+                </SelectGroup>
+                <SelectGroup>
+                  <SelectLabel>Boring ones</SelectLabel>
+                  {Object.keys(groupedThemes)
+                    .slice(0, 6)
+                    .map((t) => (
+                      <SelectItem key={t} value={t}>
+                        {t.charAt(0).toUpperCase() + t.slice(1)}
+                      </SelectItem>
+                    ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <div className='flex items-center space-x-2'>
+              <Button
+                id='dark-mode'
+                size='icon'
+                variant='outline'
+                onClick={toggleDarkMode}
+              >
+                {isDark ? <SunIcon /> : <MoonIcon />}
+              </Button>
+              <Label className='sr-only' htmlFor='dark-mode'>
+                Dark Mode
+              </Label>
             </div>
           </div>
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className='flex justify-between items-center mb-4'>
-          <Select value={baseTheme} onValueChange={handleThemeChange}>
-            <SelectTrigger className='w-[180px]'>
-              <SelectValue placeholder='Select a theme' />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Fun ones</SelectLabel>
-                {Object.keys(groupedThemes)
-                  .slice(6, Object.keys(groupedThemes).length)
-                  .map((t) => (
-                    <SelectItem key={t} value={t}>
-                      {t.charAt(0).toUpperCase() + t.slice(1)}
-                    </SelectItem>
-                  ))}
-              </SelectGroup>
-              <SelectGroup>
-                <SelectLabel>Boring ones</SelectLabel>
-                {Object.keys(groupedThemes)
-                  .slice(0, 6)
-                  .map((t) => (
-                    <SelectItem key={t} value={t}>
-                      {t.charAt(0).toUpperCase() + t.slice(1)}
-                    </SelectItem>
-                  ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <div className='flex items-center space-x-2'>
-            <Button
-              id='dark-mode'
-              size='icon'
-              variant='outline'
-              onClick={toggleDarkMode}
-            >
-              {isDark ? <SunIcon /> : <MoonIcon />}
-            </Button>
-            <Label className='sr-only' htmlFor='dark-mode'>
-              Dark Mode
-            </Label>
-          </div>
-        </div>
-        <ThemeSwatches colors={themeColors} />
-      </CardContent>
-    </Card>
+          <ThemeSwatches colors={themeColors} />
+        </CardContent>
+      </Card>
+    </>
   );
 };
 
