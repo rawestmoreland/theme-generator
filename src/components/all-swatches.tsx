@@ -21,14 +21,14 @@ export function AllSwatches() {
     const extractColors = () => {
       const colors = {};
       themes.forEach((themeName) => {
-        // @ts-expect-error
+        // @ts-expect-error no idea
         colors[themeName] = {};
         document.documentElement.setAttribute('data-theme', themeName);
         colorVariables.forEach((variable) => {
           const value = getComputedStyle(document.documentElement)
             .getPropertyValue(`--${variable}`)
             .trim();
-          // @ts-expect-error
+          // @ts-expect-error no idea
           colors[themeName][variable] = value;
         });
       });
@@ -38,6 +38,7 @@ export function AllSwatches() {
     extractColors();
   }, [themes]);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const ColorSwatch = ({ variable, value }: { variable: any; value: any }) => (
     <div className='flex flex-col items-center text-center mb-2'>
       <div
@@ -53,6 +54,7 @@ export function AllSwatches() {
     colors,
   }: {
     themeName: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     colors: any;
   }) => {
     if (themeName === 'system') return null;
@@ -90,7 +92,7 @@ export function AllSwatches() {
           (themeColor) =>
             !themeColor[0].includes('dark') && themeColor[0] !== 'system'
         )
-        .map(([themeName, colors]) => (
+        .map(([themeName]) => (
           <Card key={themeName}>
             <CardHeader>
               <CardTitle>{themeName}</CardTitle>
