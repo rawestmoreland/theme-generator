@@ -93,24 +93,26 @@ export function AllSwatches() {
             !themeColor[0].includes('dark') && themeColor[0] !== 'system'
         )
         .map(([themeName]) => (
-          <Card key={themeName}>
-            <CardHeader>
-              <CardTitle>{themeName}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className='flex flex-col gap-2'>
-                {Object.entries(themeColors)
-                  .filter((themeColor) => themeColor[0].includes(themeName))
-                  .map(([themeName, colors]) => (
-                    <ThemeCard
-                      key={themeName}
-                      themeName={themeName}
-                      colors={colors}
-                    />
-                  ))}
-              </div>
-            </CardContent>
-          </Card>
+          <>
+            <Card key={themeName}>
+              <CardHeader>
+                <CardTitle>{themeName}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className='flex flex-col gap-2'>
+                  {Object.entries(themeColors)
+                    .filter((themeColor) => themeColor[0].includes(themeName))
+                    .map(([themeName, colors]) => (
+                      <ThemeCard
+                        key={themeName}
+                        themeName={themeName}
+                        colors={colors}
+                      />
+                    ))}
+                </div>
+              </CardContent>
+            </Card>
+          </>
         ))}
     </div>
   );

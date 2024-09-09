@@ -2,7 +2,7 @@
 
 import { ClassAttributes, InsHTMLAttributes, JSX, useEffect } from 'react';
 
-const AdBanner = (
+const AdSense = (
   props: JSX.IntrinsicAttributes &
     ClassAttributes<HTMLModElement> &
     InsHTMLAttributes<HTMLModElement>
@@ -27,4 +27,4 @@ const AdBanner = (
     />
   );
 };
-export default AdBanner;
+export default AdSense;

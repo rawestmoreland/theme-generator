@@ -137,7 +137,7 @@ const NextThemeSwatches = () => {
 
   return (
     <>
-      <Card className='w-full max-w-3xl mx-auto'>
+      <Card className='w-full max-w-7xl mx-auto'>
         <CardHeader>
           <CardTitle>
             <div className='flex justify-between items-center'>
