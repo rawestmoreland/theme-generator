@@ -19,7 +19,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { MoonIcon, SunIcon } from 'lucide-react';
+import { Globe2, MoonIcon, SunIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   Sheet,
@@ -33,6 +33,7 @@ import { codeBlocks } from '@/lib/codeBlocks';
 import { ScrollArea } from './ui/scroll-area';
 import { CopyButton } from './copy-button';
 import Link from 'next/link';
+import { TwitterLogoIcon } from '@radix-ui/react-icons';
 
 export const ColorSwatch = ({
   color,
@@ -137,6 +138,40 @@ const NextThemeSwatches = () => {
 
   return (
     <>
+      <div className='max-w-7xl w-full mx-auto flex justify-between'>
+        <div>
+          <div className='flex items-center space-x-2'>
+            <Button
+              id='dark-mode'
+              size='icon'
+              variant='outline'
+              onClick={toggleDarkMode}
+            >
+              {isDark ? (
+                <SunIcon className='h-4 w-4' />
+              ) : (
+                <MoonIcon className='h-4 w-4' />
+              )}
+            </Button>
+            <Label className='sr-only' htmlFor='dark-mode'>
+              Dark Mode
+            </Label>
+          </div>
+        </div>
+        <div className='space-x-2'>
+          <Button variant='outline' asChild>
+            <Link href='https://twitter.com/ctrlaltideate' target='_blank'>
+              <TwitterLogoIcon className='w-4 h-4' />
+            </Link>
+          </Button>
+          <Button variant='outline' asChild>
+            <Link href='https://richardwestmoreland.com' target='_blank'>
+              <Globe2 className='w-4 h-4' />
+            </Link>
+          </Button>
+        </div>
+      </div>
+
       <Card className='w-full max-w-7xl mx-auto'>
         <CardHeader>
           <CardTitle>
@@ -216,19 +251,6 @@ const NextThemeSwatches = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
-            <div className='flex items-center space-x-2'>
-              <Button
-                id='dark-mode'
-                size='icon'
-                variant='outline'
-                onClick={toggleDarkMode}
-              >
-                {isDark ? <SunIcon /> : <MoonIcon />}
-              </Button>
-              <Label className='sr-only' htmlFor='dark-mode'>
-                Dark Mode
-              </Label>
-            </div>
           </div>
           <ThemeSwatches colors={themeColors} />
         </CardContent>
