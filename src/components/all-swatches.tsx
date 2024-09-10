@@ -91,7 +91,12 @@ export function AllSwatches() {
       <Adsense
         client='ca-pub-3399938065938082'
         slot='7892467966'
-        style={{ display: 'flex', width: '100%', justifyContent: 'center' }}
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
         layout='in-article'
         format='fluid'
       />

@@ -19,11 +19,15 @@ export default function CardsDemo() {
     <>
       <div className='max-w-7xl mx-auto mb-4'>
         <Adsense
+          adTest='on'
           client='ca-pub-3399938065938082'
           slot='8682009292'
-          style={{ display: 'flex', width: '100%', justifyContent: 'center' }}
-          layout='in-article'
-          format='fluid'
+          style={{
+            display: 'flex',
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
         />
       </div>
       <div className='md:grids-col-2 grid md:gap-4 lg:grid-cols-10 xl:grid-cols-11 xl:gap-4'>
