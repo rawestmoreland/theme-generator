@@ -17,7 +17,7 @@ import { Adsense } from '@ctrl/react-adsense';
 export default function CardsDemo() {
   return (
     <>
-      <div className='max-w-7xl mx-auto'>
+      <div className='max-w-7xl mx-auto mb-4'>
         <Adsense
           client='ca-pub-3399938065938082'
           slot='8682009292'

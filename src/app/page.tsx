@@ -49,7 +49,6 @@ export default function Home() {
       <div className='space-y-8 m-8'>
         <div className=' flex flex-col gap-2'>
           <NextThemeSwatches />
-          <div className='w-full max-w-7xl mx-auto'></div>
           <div className='max-w-7xl mx-auto'>
             <CardsDemo />
           </div>
