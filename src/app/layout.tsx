@@ -29,11 +29,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <footer className='p-8'>
+        {/* <footer className='p-8'>
           <span className='text-sm'>
             &copy; 2024 Westmoreland Creative. All rights reserved.
           </span>
-        </footer>
+        </footer> */}
         <script
           async
           src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3399938065938082'
