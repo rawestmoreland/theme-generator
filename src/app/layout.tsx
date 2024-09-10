@@ -15,7 +15,33 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: 'shadcn UI Theme Generator',
-  description: 'The default themes are boring. These are not.',
+  description:
+    'Create custom themes for your shadcn UI projects with our intuitive theme generator. Explore a wide range of color schemes and styles to make your UI stand out.',
+  openGraph: {
+    title: 'shadcn UI Theme Generator',
+    description:
+      'Create custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
+    images: [
+      {
+        url: 'https://shadcncolors.com/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'shadcn UI Theme Generator',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'shadcn UI Theme Generator',
+    description:
+      'Create custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
+    images: ['https://shadcncolors.com/og-image.jpg'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
