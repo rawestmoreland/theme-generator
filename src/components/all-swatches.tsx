@@ -3,7 +3,7 @@
 import { useTheme, ThemeProvider } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Adsense } from '@ctrl/react-adsense';
+// import { Adsense } from '@ctrl/react-adsense';
 
 export function AllSwatches() {
   const { themes } = useTheme();
@@ -88,7 +88,7 @@ export function AllSwatches() {
 
   return (
     <>
-      <Adsense
+      {/* <Adsense
         client='ca-pub-3399938065938082'
         slot='7892467966'
         style={{
@@ -99,7 +99,7 @@ export function AllSwatches() {
         }}
         layout='in-article'
         format='fluid'
-      />
+      /> */}
       <div className='p-4 grid grid-cols-1 md:grid-cols-2 gap-4'>
         {Object.entries(themeColors)
           .filter(

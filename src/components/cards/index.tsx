@@ -12,12 +12,12 @@ import { CardsShare } from './share';
 import { CardsStats } from './stats';
 import { CardsCalendar } from './calendar';
 import { CardsTeamMembers } from './team-members';
-import { Adsense } from '@ctrl/react-adsense';
+// import { Adsense } from '@ctrl/react-adsense';
 
 export default function CardsDemo() {
   return (
     <>
-      <div className='max-w-7xl mx-auto mb-4'>
+      {/* <div className='max-w-7xl mx-auto mb-4'>
         <Adsense
           adTest='on'
           client='ca-pub-3399938065938082'
@@ -29,7 +29,7 @@ export default function CardsDemo() {
             alignItems: 'center',
           }}
         />
-      </div>
+      </div> */}
       <div className='md:grids-col-2 grid md:gap-4 lg:grid-cols-10 xl:grid-cols-11 xl:gap-4'>
         <div className='space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4'>
           <CardsStats />
