@@ -34,6 +34,7 @@ import { ScrollArea } from './ui/scroll-area';
 import { CopyButton } from './copy-button';
 import Link from 'next/link';
 import { TwitterLogoIcon } from '@radix-ui/react-icons';
+import Image from 'next/image';
 
 export const ColorSwatch = ({
   color,
@@ -138,37 +139,38 @@ const NextThemeSwatches = () => {
 
   return (
     <>
-      <div className='max-w-7xl w-full mx-auto flex justify-between'>
-        <div>
-          <div className='flex items-center space-x-2'>
-            <Button
-              id='dark-mode'
-              size='icon'
-              variant='outline'
-              onClick={toggleDarkMode}
-            >
-              {isDark ? (
-                <SunIcon className='h-4 w-4' />
-              ) : (
-                <MoonIcon className='h-4 w-4' />
-              )}
+      <div className='max-w-7xl w-full mx-auto flex items-end justify-between'>
+        <div className='flex items-end gap-8'>
+          <Image alt='mascot' src='/mascot.png' width={80} height={80} />
+          <div className='flex gap-2'>
+            <Button variant='outline' asChild>
+              <Link href='https://twitter.com/ctrlaltideate' target='_blank'>
+                <TwitterLogoIcon className='w-4 h-4' />
+              </Link>
             </Button>
-            <Label className='sr-only' htmlFor='dark-mode'>
-              Dark Mode
-            </Label>
+            <Button variant='outline' asChild>
+              <Link href='https://richardwestmoreland.com' target='_blank'>
+                <Globe2 className='w-4 h-4' />
+              </Link>
+            </Button>
           </div>
         </div>
-        <div className='space-x-2'>
-          <Button variant='outline' asChild>
-            <Link href='https://twitter.com/ctrlaltideate' target='_blank'>
-              <TwitterLogoIcon className='w-4 h-4' />
-            </Link>
+        <div className='flex items-baseline justify-baseline gap-2'>
+          <Button
+            id='dark-mode'
+            size='icon'
+            variant='outline'
+            onClick={toggleDarkMode}
+          >
+            {isDark ? (
+              <SunIcon className='h-4 w-4' />
+            ) : (
+              <MoonIcon className='h-4 w-4' />
+            )}
           </Button>
-          <Button variant='outline' asChild>
-            <Link href='https://richardwestmoreland.com' target='_blank'>
-              <Globe2 className='w-4 h-4' />
-            </Link>
-          </Button>
+          <Label className='sr-only' htmlFor='dark-mode'>
+            Dark Mode
+          </Label>
         </div>
       </div>
 
