@@ -15,19 +15,19 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'shadcn UI Theme Generator',
+  title: 'shadcn UI Theme Picker',
   description:
-    'Create custom themes for your shadcn UI projects with our intuitive theme generator. Explore a wide range of color schemes and styles to make your UI stand out.',
+    'Browse themes for your shadcn UI projects with our intuitive theme picker. Explore a wide range of color schemes and styles to make your UI stand out.',
   openGraph: {
-    title: 'shadcn UI Theme Generator',
+    title: 'shadcn UI Theme Picker',
     description:
-      'Create custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
+      'Browse custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
     images: [
       {
         url: 'https://shadcncolors.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'shadcn UI Theme Generator',
+        alt: 'shadcn UI Theme Picker',
       },
     ],
     locale: 'en_US',
@@ -35,15 +35,17 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'shadcn UI Theme Generator',
+    title: 'shadcn UI Theme Picker',
     description:
-      'Create custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
+      'Browse custom themes for your shadcn UI projects. Explore color schemes and styles to make your UI stand out.',
     images: ['https://shadcncolors.com/og-image.jpg'],
   },
   icons: {
     icon: '/favicon.ico',
   },
 };
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
 
 export default function RootLayout({
   children,
@@ -52,23 +54,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <>
-        <Script
-          strategy='lazyOnload'
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_MEASUREMENT_ID}`}
-        />
-
-        <Script id='' strategy='lazyOnload'>
-          {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_MEASUREMENT_ID}', {
-                page_path: window.location.pathname,
-                });
-                `}
-        </Script>
-      </>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          if (window.location.hostname !== 'localhost') {
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          }
+        `}
+      </Script>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
