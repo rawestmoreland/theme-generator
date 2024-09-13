@@ -70,7 +70,7 @@ export function AllSwatches() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className='flex w-full justify-between'>
+              <div className='grid grid-rows-2 grid-cols-3 lg:grid-rows-1 lg:grid-cols-6'>
                 {Object.entries(colors).map(([variable, value]) => (
                   <ColorSwatch
                     key={variable}
