@@ -35,6 +35,8 @@ import { CopyButton } from './copy-button';
 import Link from 'next/link';
 import { TwitterLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
+import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
+import { useConfig } from '@/lib/hooks/useConfig';
 
 export const ColorSwatch = ({
   color,
@@ -65,10 +67,12 @@ export const ThemeSwatches = ({
 );
 
 const NextThemeSwatches = () => {
+  const [config, setConfig] = useConfig();
   const { theme, setTheme, themes } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
   const [baseTheme, setBaseTheme] = useState('');
   const [isDark, setIsDark] = useState(false);
+  const [textCodeBlock, setTextCodeBlock] = useState('');
   const [themeColors, setThemeColors] = useState<Record<string, string>>({});
 
   useEffect(() => {
@@ -85,8 +89,10 @@ const NextThemeSwatches = () => {
   useEffect(() => {
     if (isMounted) {
       setTheme(isDark ? `${baseTheme}-dark` : baseTheme);
+      const textCode = codeBlocks(config?.radius);
+      setTextCodeBlock(textCode[baseTheme as keyof typeof textCode]);
     }
-  }, [baseTheme, isDark, isMounted, setTheme]);
+  }, [baseTheme, isDark, isMounted, setTheme, config.radius]);
 
   useEffect(() => {
     const updateColors = () => {
@@ -173,7 +179,6 @@ const NextThemeSwatches = () => {
           </Label>
         </div>
       </div>
-
       <Card className='w-full max-w-7xl mx-auto'>
         <CardHeader>
           <CardTitle>
@@ -198,11 +203,7 @@ const NextThemeSwatches = () => {
                     <SheetHeader>
                       <SheetTitle className='space-x-4'>
                         <span>Copy CSS</span>{' '}
-                        <CopyButton
-                          code={
-                            codeBlocks[baseTheme as keyof typeof codeBlocks]
-                          }
-                        />
+                        <CopyButton code={textCodeBlock} />
                       </SheetTitle>
                       <SheetDescription>
                         Copy and paste this into your globals.css
@@ -214,7 +215,7 @@ const NextThemeSwatches = () => {
                           id='code-block'
                           className='language-typescript text-xs'
                         >
-                          {codeBlocks[baseTheme as keyof typeof codeBlocks]}
+                          {textCodeBlock}
                         </code>
                       </pre>
                     </ScrollArea>
@@ -225,7 +226,7 @@ const NextThemeSwatches = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className='flex justify-between items-center mb-4'>
+          <div className='flex flex-col mb-4 items-start gap-2'>
             <Select value={baseTheme} onValueChange={handleThemeChange}>
               <SelectTrigger className='w-[180px]'>
                 <SelectValue placeholder='Select a theme' />
@@ -253,6 +254,22 @@ const NextThemeSwatches = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            <ToggleGroup
+              className='flex flex-wrap items-start justify-start'
+              type='single'
+              value={(config?.radius ?? 0.5).toString()}
+              variant='outline'
+              onValueChange={(value) => {
+                setConfig({ ...config, radius: Number(value) });
+              }}
+            >
+              <ToggleGroupItem value='0'>0</ToggleGroupItem>
+              <ToggleGroupItem value='0.125'>0.125rem</ToggleGroupItem>
+              <ToggleGroupItem value='0.25'>0.25rem</ToggleGroupItem>
+              <ToggleGroupItem value='0.375'>0.375rem</ToggleGroupItem>
+              <ToggleGroupItem value='0.5'>0.5rem</ToggleGroupItem>
+              <ToggleGroupItem value='1'>1rem</ToggleGroupItem>
+            </ToggleGroup>
           </div>
           <ThemeSwatches colors={themeColors} />
         </CardContent>

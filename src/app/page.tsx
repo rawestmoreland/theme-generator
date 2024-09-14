@@ -2,6 +2,7 @@ import CardsDemo from '@/components/cards';
 
 import NextThemeSwatches from '@/components/next-theme-swatches';
 import { ThemeProvider } from '@/components/theme-provider';
+import { ThemeWrapper } from '@/components/theme-wrapper';
 
 export default function Home() {
   return (
@@ -46,14 +47,16 @@ export default function Home() {
         'zen-garden-dark',
       ]}
     >
-      <div className='space-y-8 m-8'>
-        <div className=' flex flex-col gap-2'>
-          <NextThemeSwatches />
-          <div className='max-w-7xl mx-auto'>
-            <CardsDemo />
+      <ThemeWrapper>
+        <div className='space-y-8 m-8'>
+          <div className=' flex flex-col gap-2'>
+            <NextThemeSwatches />
+            <div className='max-w-7xl mx-auto'>
+              <CardsDemo />
+            </div>
           </div>
         </div>
-      </div>
+      </ThemeWrapper>
     </ThemeProvider>
   );
 }

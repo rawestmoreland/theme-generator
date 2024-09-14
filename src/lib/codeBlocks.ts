@@ -1,4 +1,4 @@
-export const codeBlocks = {
+export const codeBlocks = (radius?: number) => ({
   zinc: `@layer base {
   :root {
     --background: 0 0% 100%;
@@ -20,7 +20,7 @@ export const codeBlocks = {
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -48,6 +48,7 @@ export const codeBlocks = {
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -76,7 +77,7 @@ export const codeBlocks = {
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -132,7 +133,7 @@ export const codeBlocks = {
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -188,7 +189,7 @@ export const codeBlocks = {
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -244,7 +245,7 @@ export const codeBlocks = {
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -300,7 +301,7 @@ export const codeBlocks = {
     --border: 20 5.9% 90%;
     --input: 20 5.9% 90%;
     --ring: 24.6 95% 53.1%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -356,7 +357,7 @@ export const codeBlocks = {
     --border: 330 60% 90%;
     --input: 330 60% 90%;
     --ring: 330 90% 60%;
-    --radius: 1rem;
+    --radius: ${radius ?? '1'}rem;
     --chart-1: 330 90% 60%;
     --chart-2: 275 90% 60%;
     --chart-3: 30 90% 60%;
@@ -412,7 +413,7 @@ export const codeBlocks = {
     --border: 220 20% 80%;
     --input: 220 20% 80%;
     --ring: 320 100% 50%;
-    --radius: 0.125rem;
+    --radius: ${radius ?? '0.125'}rem;
     --chart-1: 320 100% 50%;
     --chart-2: 180 100% 50%;
     --chart-3: 65 100% 50%;
@@ -468,7 +469,7 @@ export const codeBlocks = {
     --border: 60 10% 75%;
     --input: 60 10% 75%;
     --ring: 220 90% 50%;
-    --radius: 0;
+    --radius: ${radius ?? '0'}rem;
     --chart-1: 220 90% 50%;
     --chart-2: 120 90% 40%;
     --chart-3: 30 90% 50%;
@@ -524,7 +525,7 @@ export const codeBlocks = {
     --border: 180 50% 85%;
     --input: 180 50% 85%;
     --ring: 150 80% 40%;
-    --radius: 0.75rem;
+    --radius: ${radius ?? '0.75'}rem;
     --chart-1: 150 80% 40%;
     --chart-2: 35 90% 50%;
     --chart-3: 330 70% 60%;
@@ -581,7 +582,7 @@ export const codeBlocks = {
     --border: 30 20% 80%;
     --input: 30 20% 80%;
     --ring: 25 80% 40%;
-    --radius: 0.25rem;
+    --radius: ${radius ?? '0.25'}rem;
     --chart-1: 25 80% 40%;
     --chart-2: 45 70% 50%;
     --chart-3: 15 80% 50%;
@@ -638,7 +639,7 @@ export const codeBlocks = {
     --border: 280 30% 80%;
     --input: 280 30% 80%;
     --ring: 320 100% 60%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 320 100% 60%;
     --chart-2: 220 100% 60%;
     --chart-3: 180 100% 50%;
@@ -666,7 +667,7 @@ export const codeBlocks = {
     --border: 280 50% 30%;
     --input: 280 50% 30%;
     --ring: 320 100% 70%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 320 100% 70%;
     --chart-2: 220 100% 70%;
     --chart-3: 180 100% 60%;
@@ -695,7 +696,7 @@ export const codeBlocks = {
     --border: 60 30% 85%;
     --input: 60 30% 85%;
     --ring: 350 80% 80%;
-    --radius: 1rem;
+    --radius: ${radius ?? '1'}rem;
     --chart-1: 350 80% 80%;
     --chart-2: 180 60% 80%;
     --chart-3: 270 70% 80%;
@@ -723,7 +724,7 @@ export const codeBlocks = {
     --border: 270 30% 30%;
     --input: 270 30% 30%;
     --ring: 350 80% 70%;
-    --radius: 1rem;
+    --radius: ${radius ?? '1'}rem;
     --chart-1: 350 80% 70%;
     --chart-2: 180 60% 70%;
     --chart-3: 270 70% 70%;
@@ -752,7 +753,7 @@ export const codeBlocks = {
     --border: 220 20% 85%;
     --input: 220 20% 85%;
     --ring: 240 80% 50%;
-    --radius: 0.375rem;
+    --radius: ${radius ?? '0.375'}rem;
     --chart-1: 240 80% 50%;
     --chart-2: 180 70% 50%;
     --chart-3: 300 70% 50%;
@@ -780,7 +781,7 @@ export const codeBlocks = {
     --border: 230 50% 20%;
     --input: 230 50% 20%;
     --ring: 240 80% 60%;
-    --radius: 0.375rem;
+    --radius: ${radius ?? '0.375'}rem;
     --chart-1: 240 80% 60%;
     --chart-2: 180 70% 40%;
     --chart-3: 300 70% 60%;
@@ -809,7 +810,7 @@ export const codeBlocks = {
     --border: 30 10% 85%;
     --input: 30 10% 85%;
     --ring: 25 20% 40%;
-    --radius: 0.25rem;
+    --radius: ${radius ?? '0.25'}rem;
     --chart-1: 25 20% 40%;
     --chart-2: 200 15% 70%;
     --chart-3: 340 15% 55%;
@@ -837,7 +838,7 @@ export const codeBlocks = {
     --border: 30 15% 25%;
     --input: 30 15% 25%;
     --ring: 25 20% 50%;
-    --radius: 0.25rem;
+    --radius: ${radius ?? '0.25'}rem;
     --chart-1: 25 20% 50%;
     --chart-2: 200 15% 40%;
     --chart-3: 340 15% 45%;
@@ -866,7 +867,7 @@ export const codeBlocks = {
     --border: 210 15% 85%;
     --input: 210 15% 85%;
     --ring: 200 20% 45%;
-    --radius: 0.375rem;
+    --radius: ${radius ?? '0.375'}rem;
     --chart-1: 200 20% 45%;
     --chart-2: 180 10% 75%;
     --chart-3: 240 15% 55%;
@@ -894,7 +895,7 @@ export const codeBlocks = {
     --border: 210 20% 25%;
     --input: 210 20% 25%;
     --ring: 200 20% 55%;
-    --radius: 0.375rem;
+    --radius: ${radius ?? '0.375'}rem;
     --chart-1: 200 20% 55%;
     --chart-2: 180 10% 35%;
     --chart-3: 240 15% 65%;
@@ -923,7 +924,7 @@ export const codeBlocks = {
     --border: 90 10% 85%;
     --input: 90 10% 85%;
     --ring: 120 15% 45%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 120 15% 45%;
     --chart-2: 60 10% 80%;
     --chart-3: 180 15% 45%;
@@ -951,7 +952,7 @@ export const codeBlocks = {
     --border: 90 15% 25%;
     --input: 90 15% 25%;
     --ring: 120 15% 55%;
-    --radius: 0.5rem;
+    --radius: ${radius ?? '0.5'}rem;
     --chart-1: 120 15% 55%;
     --chart-2: 60 10% 30%;
     --chart-3: 180 15% 55%;
@@ -959,4 +960,4 @@ export const codeBlocks = {
     --chart-5: 240 10% 40%;
   }
 }`,
-};
+});
