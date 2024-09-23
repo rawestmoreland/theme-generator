@@ -19,7 +19,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { Globe2, MoonIcon, SunIcon } from 'lucide-react';
+import { CoffeeIcon, Globe2, MoonIcon, SunIcon } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   Sheet,
@@ -157,6 +157,16 @@ const NextThemeSwatches = () => {
             <Button variant='outline' asChild>
               <Link href='https://richardwestmoreland.com' target='_blank'>
                 <Globe2 className='w-4 h-4' />
+              </Link>
+            </Button>
+            <Button variant='outline' asChild>
+              <Link
+                href='https://buymeacoffee.com/westmorelandcreative'
+                target='_blank'
+                className='flex items-center text-xs'
+              >
+                <CoffeeIcon className='w-4 h-4 mr-2' />
+                Buy me a coffee
               </Link>
             </Button>
           </div>
