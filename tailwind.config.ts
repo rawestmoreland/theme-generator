@@ -57,7 +57,15 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
     },
+    hljs: {
+      theme: 'atom-one-dark',
+    },
   },
-  plugins: [require('tailwindcss-animate')],
+  safelist: [{ pattern: /hljs+/ }],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwind-highlightjs'),
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;

@@ -21,6 +21,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import {
+  BookIcon,
   ClipboardCopyIcon,
   CodeIcon,
   CoffeeIcon,
@@ -229,6 +230,12 @@ const NextThemeSwatches = () => {
           <Button variant='outline' asChild>
             <Link href='https://richardwestmoreland.com' target='_blank'>
               <Globe2Icon className='w-4 h-4' />
+            </Link>
+          </Button>
+          <Button variant='outline' asChild>
+            <Link href='/blog' target='_blank'>
+              <BookIcon className='w-4 h-4 md:mr-2 mr-0' />
+              <span className='sr-only md:not-sr-only'>Blog</span>
             </Link>
           </Button>
           <Button variant='outline' asChild>
