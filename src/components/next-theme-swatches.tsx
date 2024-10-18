@@ -335,7 +335,7 @@ const NextThemeSwatches = () => {
                 onChange={(e) => setCustomHexValue(e.target.value)}
                 placeholder='Enter a hex value'
               />
-              <Button disabled={!!customHexValue} onClick={applyCustomTheme}>
+              <Button disabled={!customHexValue} onClick={applyCustomTheme}>
                 <Wand2Icon className='md:hidden block h-4 w-4' />
                 <span className='sr-only md:not-sr-only'>
                   Apply Custom Theme
